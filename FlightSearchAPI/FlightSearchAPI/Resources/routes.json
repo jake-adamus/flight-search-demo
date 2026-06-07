@@ -1,0 +1,42 @@
+[
+  { "origin": "WAW", "destinations": ["LHR", "CDG", "FRA", "AMS", "MAD", "ROM", "OSL", "CPH", "ARN", "HEL", "DUB", "JFK", "DXB", "BLR"] },
+  { "origin": "KRK", "destinations": ["WAW", "LHR", "BER", "PRG", "VIE", "DUB", "FRA"] },
+  { "origin": "GDN", "destinations": ["WAW", "OSL", "CPH", "ARN", "LHR"] },
+  { "origin": "KTW", "destinations": ["WAW", "DUB", "FRA", "LTN", "STN"] },
+  { "origin": "WRO", "destinations": ["WAW", "MUC", "FRA", "LHR", "BCN"] },
+  { "origin": "POZ", "destinations": ["WAW", "CDG", "STN", "AMS", "FRA"] },
+  { "origin": "RZE", "destinations": ["WAW", "DUB", "LHR", "FRA", "OSL"] },
+  { "origin": "SZZ", "destinations": ["WAW", "LTN", "STN", "OSL", "CPH"] },
+  { "origin": "LUZ", "destinations": ["WAW", "DUB", "LTN", "STN"] },
+  { "origin": "BZG", "destinations": ["WAW", "STN", "DUB", "FRA"] },
+
+  { "origin": "LHR", "destinations": ["WAW", "KRK", "GDN", "JFK", "ORD", "DXB"] },
+  { "origin": "CDG", "destinations": ["WAW", "AMS", "MAD", "ROM", "JFK"] },
+  { "origin": "FRA", "destinations": ["WAW", "KRK", "LAX", "ORD", "SIN"] },
+  { "origin": "AMS", "destinations": ["WAW", "GDN", "CPH", "OSL", "JFK"] },
+  { "origin": "MAD", "destinations": ["WAW", "BCN", "ROM", "DXB"] },
+  { "origin": "ROM", "destinations": ["WAW", "MAD", "ATH", "VIE", "IST"] },
+  { "origin": "BER", "destinations": ["WAW", "KRK", "CPH", "ARN", "VIE"] },
+  { "origin": "PRG", "destinations": ["WAW", "VIE", "BUD", "FRA", "AMS"] },
+  { "origin": "VIE", "destinations": ["WAW", "PRG", "BUD", "ROM", "IST"] },
+  { "origin": "ATH", "destinations": ["WAW", "ROM", "IST", "DXB"] },
+
+  { "origin": "IST", "destinations": ["WAW", "ATH", "VIE", "DXB", "DOH"] },
+  { "origin": "OSL", "destinations": ["GDN", "WAW", "ARN", "CPH", "HEL"] },
+  { "origin": "CPH", "destinations": ["WAW", "GDN", "ARN", "OSL", "HEL"] },
+  { "origin": "ARN", "destinations": ["WAW", "OSL", "CPH", "HEL"] },
+  { "origin": "HEL", "destinations": ["WAW", "ARN", "CPH", "OSL"] },
+  { "origin": "DUB", "destinations": ["WAW", "KRK", "RZE", "LHR", "AMS"] },
+
+  { "origin": "JFK", "destinations": ["LHR", "CDG", "AMS", "LAX", "ORD", "WAW"] },
+  { "origin": "EWR", "destinations": ["LHR", "CDG", "FRA", "ORD"] },
+  { "origin": "LAX", "destinations": ["FRA", "JFK", "SFO", "ORD"] },
+  { "origin": "ORD", "destinations": ["JFK", "EWR", "LAX", "WAW"] },
+  { "origin": "SFO", "destinations": ["LAX", "JFK", "ORD", "SIN"] },
+
+  { "origin": "YYZ", "destinations": ["JFK", "LHR", "CDG"] },
+  { "origin": "DXB", "destinations": ["WAW", "LHR", "IST", "DOH", "SIN", "JFK"] },
+  { "origin": "DOH", "destinations": ["WAW", "IST", "DXB", "SIN", "BLR"] },
+  { "origin": "SIN", "destinations": ["FRA", "DXB", "DOH", "BLR", "LHR"] },
+  { "origin": "BLR", "destinations": ["WAW", "DOH", "DXB", "SIN"] }
+]

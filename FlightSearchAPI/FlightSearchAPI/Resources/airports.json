@@ -1,0 +1,54 @@
+[
+  { "code": "WAW", "name": "Warsaw Chopin Airport", "city": "Warsaw", "country": "Poland" },
+  { "code": "KRK", "name": "John Paul II International Airport Kraków-Balice", "city": "Kraków", "country": "Poland" },
+  { "code": "GDN", "name": "Gdańsk Lech Wałęsa Airport", "city": "Gdańsk", "country": "Poland" },
+  { "code": "KTW", "name": "Katowice Airport", "city": "Katowice", "country": "Poland" },
+  { "code": "WRO", "name": "Wrocław Nicolaus Copernicus Airport", "city": "Wrocław", "country": "Poland" },
+  { "code": "POZ", "name": "Poznań–Ławica Airport", "city": "Poznań", "country": "Poland" },
+  { "code": "RZE", "name": "Rzeszów–Jasionka Airport", "city": "Rzeszów", "country": "Poland" },
+  { "code": "SZZ", "name": "Solidarity Szczecin–Goleniów Airport", "city": "Szczecin", "country": "Poland" },
+  { "code": "LUZ", "name": "Lublin Airport", "city": "Lublin", "country": "Poland" },
+  { "code": "BZG", "name": "Bydgoszcz Ignacy Jan Paderewski Airport", "city": "Bydgoszcz", "country": "Poland" },
+
+  { "code": "LHR", "name": "London Heathrow Airport", "city": "London", "country": "United Kingdom" },
+  { "code": "LGW", "name": "London Gatwick Airport", "city": "London", "country": "United Kingdom" },
+  { "code": "LTN", "name": "London Luton Airport", "city": "London", "country": "United Kingdom" },
+  { "code": "STN", "name": "London Stansted Airport", "city": "London", "country": "United Kingdom" },
+  { "code": "LCY", "name": "London City Airport", "city": "London", "country": "United Kingdom" },
+
+  { "code": "CDG", "name": "Charles de Gaulle Airport", "city": "Paris", "country": "France" },
+  { "code": "ORY", "name": "Paris Orly Airport", "city": "Paris", "country": "France" },
+  { "code": "FRA", "name": "Frankfurt Airport", "city": "Frankfurt", "country": "Germany" },
+  { "code": "MUC", "name": "Munich Airport", "city": "Munich", "country": "Germany" },
+  { "code": "BER", "name": "Berlin Brandenburg Airport", "city": "Berlin", "country": "Germany" },
+
+  { "code": "AMS", "name": "Amsterdam Airport Schiphol", "city": "Amsterdam", "country": "Netherlands" },
+  { "code": "MAD", "name": "Adolfo Suárez Madrid–Barajas Airport", "city": "Madrid", "country": "Spain" },
+  { "code": "BCN", "name": "Josep Tarradellas Barcelona-El Prat Airport", "city": "Barcelona", "country": "Spain" },
+  { "code": "ROM", "name": "Rome Fiumicino Airport", "city": "Rome", "country": "Italy" },
+  { "code": "MXP", "name": "Milan Malpensa Airport", "city": "Milan", "country": "Italy" },
+
+  { "code": "VIE", "name": "Vienna International Airport", "city": "Vienna", "country": "Austria" },
+  { "code": "PRG", "name": "Václav Havel Airport Prague", "city": "Prague", "country": "Czech Republic" },
+  { "code": "BUD", "name": "Budapest Ferenc Liszt International Airport", "city": "Budapest", "country": "Hungary" },
+  { "code": "ATH", "name": "Athens International Airport", "city": "Athens", "country": "Greece" },
+  { "code": "IST", "name": "Istanbul Airport", "city": "Istanbul", "country": "Turkey" },
+
+  { "code": "OSL", "name": "Oslo Gardermoen Airport", "city": "Oslo", "country": "Norway" },
+  { "code": "CPH", "name": "Copenhagen Airport", "city": "Copenhagen", "country": "Denmark" },
+  { "code": "ARN", "name": "Stockholm Arlanda Airport", "city": "Stockholm", "country": "Sweden" },
+  { "code": "HEL", "name": "Helsinki Airport", "city": "Helsinki", "country": "Finland" },
+  { "code": "DUB", "name": "Dublin Airport", "city": "Dublin", "country": "Ireland" },
+
+  { "code": "JFK", "name": "John F. Kennedy International Airport", "city": "New York", "country": "United States" },
+  { "code": "EWR", "name": "Newark Liberty International Airport", "city": "Newark", "country": "United States" },
+  { "code": "LAX", "name": "Los Angeles International Airport", "city": "Los Angeles", "country": "United States" },
+  { "code": "ORD", "name": "O'Hare International Airport", "city": "Chicago", "country": "United States" },
+  { "code": "SFO", "name": "San Francisco International Airport", "city": "San Francisco", "country": "United States" },
+
+  { "code": "YYZ", "name": "Toronto Pearson International Airport", "city": "Toronto", "country": "Canada" },
+  { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "United Arab Emirates" },
+  { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" },
+  { "code": "SIN", "name": "Singapore Changi Airport", "city": "Singapore", "country": "Singapore" },
+  { "code": "BLR", "name": "Kempegowda International Airport", "city": "Bengaluru", "country": "India" }
+]
