@@ -1,6 +1,7 @@
 using FlightSearchAPI.Data;
 using FlightSearchAPI.Services;
 using Microsoft.AspNetCore.Diagnostics;
+using Serilog;
 
 var myAllowSpecificOrigins = "localhost:8080";
 
@@ -10,8 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-//builder.Services.AddOpenApi();
-
 
 // Data context (loads JSON once)
 builder.Services.AddSingleton<FlightDataContext>();
@@ -20,9 +19,12 @@ builder.Services.AddSingleton<FlightDataContext>();
 builder.Services.AddScoped<IFlightSearchService, FlightSearchService>();
 
 // ✅ Logging (already included by default, but you can configure it)
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
 
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -40,11 +42,7 @@ builder.Services.AddCors(options =>
 builder.WebHost.UseUrls("http://localhost:8080");
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.MapOpenApi();
-//}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -75,5 +73,11 @@ app.UseExceptionHandler(exceptionHandlerApp =>
         }
     });
 });
+app.UseSerilogRequestLogging(options =>
+{
+    options.MessageTemplate = "Handled {RequestPath}";
+});
+
+app.MapGet("/", () => "API running");
 
 app.Run();

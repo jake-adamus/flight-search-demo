@@ -2,7 +2,7 @@
 using FlightSearchAPI.Models;
 using FlightSearchAPI.Models.Requests;
 using FlightSearchAPI.Models.Responses;
-using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 
 namespace FlightSearchAPI.Services
 {
@@ -11,6 +11,7 @@ namespace FlightSearchAPI.Services
     {
         private readonly FlightDataContext _context;
         private readonly ILogger<FlightSearchService> _logger;
+        private readonly List<string> _tripTypes = new List<string>() { "oneway", "return" };
 
         public FlightSearchService(FlightDataContext context, ILogger<FlightSearchService> logger)
         {
@@ -106,6 +107,29 @@ namespace FlightSearchAPI.Services
             return flights;
             
         }
+
+        public bool CheckIfOriginExists(string origin)
+        {
+            return _context.Flights
+                .Select(f => f.Origin)
+                .Distinct()
+                .Any(originInDb => originInDb.Equals(origin, StringComparison.CurrentCultureIgnoreCase));
+        }
+
+        public bool CheckIfDestinationExists(string origin, string destination)
+        {
+            return _context.Routes
+                .Where(r => r.Origin.Equals(origin, StringComparison.CurrentCultureIgnoreCase))
+                .SelectMany(r => r.Destinations)
+                .Distinct()
+                .Any(destinationInDb => destination.Equals(destinationInDb, StringComparison.CurrentCultureIgnoreCase));
+        }
+
+        public bool CheckTripType(string tripType)
+        {
+            return _tripTypes.Any(type => tripType.Equals(type, StringComparison.CurrentCultureIgnoreCase));
+        }
+
 
         private FlightResponse AddFullAirportNames(Flight flight)
         {

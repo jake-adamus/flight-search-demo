@@ -9,5 +9,8 @@ namespace FlightSearchAPI.Services
         IEnumerable<DestinationResponse> GetDestinations(DestinationRequest request);
         IEnumerable<OriginResponse> GetOrigins();
         IEnumerable<FlightResponse> SearchFlights(FlightSearchRequest request);
+        bool CheckIfOriginExists(string origin);
+        bool CheckIfDestinationExists(string origin, string destination);
+        bool CheckTripType(string tripType);
     }
 }

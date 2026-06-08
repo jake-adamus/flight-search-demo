@@ -71,3 +71,7 @@ FlightSearchAPI/FlightSearchAPI/bin/Debug/net10.0/Resources/airports.json
 FlightSearchAPI/FlightSearchAPI/bin/Debug/net10.0/Resources/flights.json
 FlightSearchAPI/FlightSearchAPI/bin/Debug/net10.0/Resources/routes.json
 flight-search-ui/node_modules/*
+/FlightSearchAPI/.vs/FlightSearchAPI.slnx/FileContentIndex
+/FlightSearchAPI/FlightSearchAPI/bin/Debug/net10.0
+/FlightSearchAPI/FlightSearchAPI/logs
+/FlightSearchAPI/FlightSearchAPI/obj/Debug/net10.0

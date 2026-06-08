@@ -2,7 +2,6 @@
 using FlightSearchAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace FlightSearchAPI.Controllers
 {
@@ -19,13 +18,6 @@ namespace FlightSearchAPI.Controllers
             _logger = logger;
         }
 
-        // GET: api/<SearchController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
 
         [HttpGet("origins")]
         public IActionResult GetOrigins()
@@ -37,6 +29,7 @@ namespace FlightSearchAPI.Controllers
                 if (!origins.Any())
                     return NotFound("No available origins found");
 
+                _logger.LogInformation("Origins requested");
                 return Ok(origins);
             }
             catch (Exception ex)
@@ -45,8 +38,6 @@ namespace FlightSearchAPI.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-
-
 
         [HttpPost("destinations")]
         public IActionResult GetDestinations(DestinationRequest request)
@@ -57,7 +48,8 @@ namespace FlightSearchAPI.Controllers
 
                 if (!result.Any())
                     return NotFound($"No destinations found for '{request.Origin}'");
-
+                
+                _logger.LogInformation("Destinations requested.");
                 return Ok(result);
             }
             catch (ArgumentException ex)
@@ -67,21 +59,47 @@ namespace FlightSearchAPI.Controllers
             }
         }
 
-
         [HttpPost("search")]
         public IActionResult SearchFlights([FromBody] FlightSearchRequest request)
         {
-            if (request == null ||
+            try
+            {
+                if (request == null ||
                 string.IsNullOrWhiteSpace(request.Origin) ||
                 string.IsNullOrWhiteSpace(request.Destination))
-            {
-                return BadRequest("Invalid search request");
+                {
+                    _logger.LogError("Invalid search request.");
+                    return BadRequest("Invalid search request");
+                }
+
+                if (!_flightSearchService.CheckIfOriginExists(request.Origin))
+                {
+                    _logger.LogInformation("No data for selected origin.");
+                    return NotFound("No data for selected origin.");
+                }
+
+                if (!_flightSearchService.CheckIfDestinationExists(request.Origin, request.Destination))
+                {
+                    _logger.LogInformation("No data for selected destination.");
+                    return NotFound("No data for selected destination.");
+                }
+
+                if (!_flightSearchService.CheckTripType(request.TripType))
+                {
+                    _logger.LogInformation("No data for selected trip type.");
+                    return NotFound("No data for selected trip type.");
+                }
+
+                var result = _flightSearchService.SearchFlights(request);
+                _logger.LogInformation("Flights fetched.");
+                return Ok(result);
             }
-
-            var result = _flightSearchService.SearchFlights(request);
-
-            return Ok(result);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching flights");
+                return BadRequest(ex.Message);
+            }
+            
         }
-
     }
 }
